@@ -1,15 +1,12 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using Anagram;
+using WordCounter.Models;
 
 namespace WordCounter.Tests
 {
   [TestClass]
   public class WordCounter : IDisposable
   {
-
-
     public void Dispose()
     {
 
