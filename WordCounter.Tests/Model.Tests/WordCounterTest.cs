@@ -9,20 +9,20 @@ namespace WordCounter.Tests
   public class WordCounterTest : IDisposable
   {
     [TestMethod]
-    public void GetWord_ReturnsWord_String()
+    public void GetMeaning_ReturnsMeaning_String()
     {
       //Arrange
       string meaning = "Mochi";
       RepeatCounter newRepeatCounter = new RepeatCounter(meaning);
 
       // Act
-      string result = newRepeatCounter.GetWord();
+      string result = newRepeatCounter.GetMeaning();
 
       //Assert
       Assert.AreEqual(meaning, result);
     }
     [TestMethod]
-    public void SetWord_GetWord_String()
+    public void SetMeaning_GetMeaning_String()
     {
       // Arrange
       string description = "Macbook";
@@ -30,8 +30,8 @@ namespace WordCounter.Tests
 
       // Act
       string secondDescription = "Microsoft";
-      newRepeatCounter.SetWord(secondDescription);
-      string result = newRepeatCounter.GetWord();
+      newRepeatCounter.SetMeaning(secondDescription);
+      string result = newRepeatCounter.GetMeaning();
 
       // Assert
       Assert.AreEqual(secondDescription, result);
@@ -46,11 +46,11 @@ namespace WordCounter.Tests
       newRepeatCounter.Save();
 
       // Act
-      List<RepeatCounter> data = RepeatCounter.GetData();
+      List<RepeatCounter> data = RepeatCounter.GetAll();
       RepeatCounter savedRepeatCounter = data[0];
 
       // Assert
-      Assert.AreEqual(newRepeatCounter, savedRepeatCounter)
+      Assert.AreEqual(newRepeatCounter, savedRepeatCounter);
 
     }
     [TestMethod]
@@ -63,13 +63,13 @@ namespace WordCounter.Tests
       newRepeatCounter1.Save();
       RepeatCounter newRepeatCounter2 = new RepeatCounter(description2);
       newRepeatCounter2.Save();
-      RepeatCounter newRepeatCounter2 = new List<RepeatCounter> { newRepeatCounter1, newRepeatCounter2 };
+      RepeatCounter newRepeatCounter = new List<RepeatCounter> { newRepeatCounter1, newRepeatCounter2 };
 
       // Act
-      List<RepeatCounter> result = RepeatCounter.GetData();
+      List<RepeatCounter> result = RepeatCounter.GetAll();
 
       // Assert
-      CollectionAssert.AreEqual(newList, result)
+      CollectionAssert.AreEqual(newRepeatCounter, result);
     }
 
     public void Dispose()

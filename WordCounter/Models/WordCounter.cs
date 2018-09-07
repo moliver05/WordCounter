@@ -20,7 +20,7 @@ namespace WordCounter.Models
     {
       _meaning = newMeaning;
     }
-    public static List<RepeatCounter> GetData()
+    public static List<RepeatCounter> GetAll()
     {
       return _data;
     }
@@ -37,7 +37,7 @@ namespace WordCounter.Models
 
   public class program
   {
-    public static Void Main ()
+    public static void Main ()
   {
     Console.WriteLine("Welcome to WordCounter Program");
     Console.WriteLine("Please Choose to Add words or Search (Add/Search)");
@@ -54,13 +54,13 @@ namespace WordCounter.Models
     Main();
   }
 
-  else if (respone == "Search")
+  else if (response == "Search")
   {
-    List<RepeatCounter> data = RepeatCounter.Getdata();
-    for (int i = 0; i < data.Length; i++)
+    List<RepeatCounter> data = RepeatCounter.GetAll();
+    for (int i = 0; i < data.Count; i++)
     {
-      string searchedData = data[i].GetMeaning();
-      Console.WriteLine((i + 1) + ". " + searchedData);
+      string searchedMeaning= data[i].GetMeaning();
+      Console.WriteLine((i + 1) + ". " + searchedMeaning);
     }
     Main();
 
