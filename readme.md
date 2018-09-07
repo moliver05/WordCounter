@@ -12,15 +12,14 @@ Mission is to create a program that checks how frequently a word appears in a gi
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Program Give Options to: Add/Check** | Add: "Code" | Check: "Code" |
-| **Program Stores the Data Gathered** | Choose Add or Check: "Add/Check" | Output: "Add Words"|
-| **Program Check the Data of Words to List Out** | Check | "Code"|
+| **Program Give Options to: Add/Search** | Add: "Code" | Search: "Code" "1" |
+| **Program Stores the Data Gathered and Count All the Matching instances of the Same** | Search:"Code | Output: "1"
 | **Program will be tested to run in Microsoft VisualStudio for Errors** | Result: Passed | Result: Failed |
 
 
 ## Setup/Installation Requirements
 
-1. To run this program, you must have Bootstrap. I use Microsoft VisualStudio, search google to download.
+1. To run this program, I use Microsoft VisualStudio, search google to download.
 2. Clone this repository: https://github.com/moliver05/WordCounter
 3. After cloning, feel free to browse all the folders.
 4. Run the terminal and type in the keywords to test the files.

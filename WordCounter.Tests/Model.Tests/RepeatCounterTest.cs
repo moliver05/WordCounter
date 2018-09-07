@@ -6,7 +6,7 @@ using WordCounter.Models;
 namespace WordCounter.Tests
 {
   [TestClass]
-  public class WordCounterTest : IDisposable
+  public class RepeatCounterTest : IDisposable
   {
     [TestMethod]
     public void GetMeaning_ReturnsMeaning_String()
@@ -54,7 +54,7 @@ namespace WordCounter.Tests
 
     }
     [TestMethod]
-    public void GetData_ReturnsRepeatCounter_RepeatCounterList()
+    public void GetAll_ReturnsData_RepeatCounterList()
     {
       // Arrange
       string description1 = "Mochi";
@@ -63,13 +63,13 @@ namespace WordCounter.Tests
       newRepeatCounter1.Save();
       RepeatCounter newRepeatCounter2 = new RepeatCounter(description2);
       newRepeatCounter2.Save();
-      RepeatCounter newRepeatCounter = new List<RepeatCounter> { newRepeatCounter1, newRepeatCounter2 };
+      RepeatCounter newList = new List<RepeatCounter> { newRepeatCounter1, newRepeatCounter2 };
 
       // Act
       List<RepeatCounter> result = RepeatCounter.GetAll();
 
       // Assert
-      CollectionAssert.AreEqual(newRepeatCounter, result);
+      CollectionAssert.AreEqual(newList, result);
     }
 
     public void Dispose()
