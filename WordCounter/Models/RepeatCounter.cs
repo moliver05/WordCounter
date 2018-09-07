@@ -1,39 +1,32 @@
 using System;
-using System.Collections.Generic;
+
 
 namespace WordCounter.Models
 {
   public class RepeatCounter
   {
-    private string _meaning;
-    private static List<RepeatCounter> _data = new List<RepeatCounter> {};
+    private string _input;
+    private string _output;
+    private int _count = 0;
 
-    public RepeatCounter (string meaning)
+    public void SetPrivateStrings(string input, string output)
     {
-      _meaning = meaning;
+      _input = input;
+      _output = output;
     }
-    public string GetMeaning()
+    public void GetPrivateStrings()
     {
-      return _meaning;
+      return _input;
+      return _output;
     }
-    public void SetMeaning(string newMeaning)
+    public int CountTheWords(int count)
     {
-      _meaning = newMeaning;
-    }
-    public static List<RepeatCounter> GetAll()
-    {
-      return _data;
-    }
-    public void Save()
-    {
-      _data.Add(this);
-    }
-    public static void ClearAll()
-    {
-      _data.Clear();
-    }
-
+     _count = count;
+     {
+      for(int i = 0; i < output.Length + 1; i ++)
+        _count += (_input == inputs[i]) ? 1 : 0;
   }
+ }
 
   public class program
   {
@@ -56,14 +49,9 @@ namespace WordCounter.Models
 
   else if (response == "Search")
   {
-    List<RepeatCounter> data = RepeatCounter.GetAll();
-    for (int i = 0; i < data.Count; i++)
-    {
-      string searchedMeaning= data[i].GetMeaning();
-      Console.WriteLine((i + 1) + ". " + searchedMeaning);
+     output = 
     }
     Main();
-
   }
   else
   {
@@ -75,4 +63,5 @@ namespace WordCounter.Models
    }
   }
  }
+}
 }

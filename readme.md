@@ -12,7 +12,7 @@ Mission is to create a program that checks how frequently a word appears in a gi
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Program Give Options to: Add/Search** | Add: "Code" | Search: "Code" "1" |
+| **Program Give Options to: Add/Search** | Add: "Code" | Search: "Code" = "1" |
 | **Program Stores the Data Gathered and Count All the Matching instances of the Same** | Search:"Code | Output: "1"
 | **Program will be tested to run in Microsoft VisualStudio for Errors** | Result: Passed | Result: Failed |
 

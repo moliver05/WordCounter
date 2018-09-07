@@ -9,69 +9,48 @@ namespace WordCounter.Tests
   public class RepeatCounterTest : IDisposable
   {
     [TestMethod]
-    public void GetMeaning_ReturnsMeaning_String()
+    public void GetInput_ReturnsInput_String()
     {
       //Arrange
-      string meaning = "Mochi";
-      RepeatCounter newRepeatCounter = new RepeatCounter(meaning);
+      string input = "Mochi";
+      RepeatCounter newRepeatCounter = new RepeatCounter(input);
 
       // Act
-      string result = newRepeatCounter.GetMeaning();
+      string result = newRepeatCounter.GetInput();
 
       //Assert
-      Assert.AreEqual(meaning, result);
+      Assert.AreEqual(input, result);
     }
     [TestMethod]
-    public void SetMeaning_GetMeaning_String()
+    public void SetInput_GetInput_String()
     {
       // Arrange
-      string description = "Macbook";
-      RepeatCounter newRepeatCounter = new RepeatCounter(description);
+      string input = "Macbook";
+      RepeatCounter newRepeatCounter = new RepeatCounter(input);
 
       // Act
       string secondDescription = "Microsoft";
-      newRepeatCounter.SetMeaning(secondDescription);
-      string result = newRepeatCounter.GetMeaning();
+      newRepeatCounter.SetInput(secondDescription);
+      string result = newRepeatCounter.GetInput();
 
       // Assert
       Assert.AreEqual(secondDescription, result);
     }
-
     [TestMethod]
-    public void Save_RepeatCounterisSavedToData_RepeatCounter()
+    public void CountTheWords()
     {
       // Arrange
-      string description = "Mochi";
-      RepeatCounter newRepeatCounter = new RepeatCounter(description);
-      newRepeatCounter.Save();
+      string count = "numbers";
+      string countChar[] = new countChar(count);
 
-      // Act
-      List<RepeatCounter> data = RepeatCounter.GetAll();
-      RepeatCounter savedRepeatCounter = data[0];
+       // Act
+       string secoundCount = "numbersxtwo"
+       newcountChar.SetInput(secondCount);
+       string result = newcountChar.GetInput();
 
-      // Assert
-      Assert.AreEqual(newRepeatCounter, savedRepeatCounter);
-
+       // Assert
+      Assert.AreEqual(secondCount, result)
     }
-    [TestMethod]
-    public void GetAll_ReturnsData_RepeatCounterList()
-    {
-      // Arrange
-      string description1 = "Mochi";
-      string  description2 = "Macbook";
-      RepeatCounter newRepeatCounter1 = new RepeatCounter(description1);
-      newRepeatCounter1.Save();
-      RepeatCounter newRepeatCounter2 = new RepeatCounter(description2);
-      newRepeatCounter2.Save();
-      RepeatCounter newList = new List<RepeatCounter> { newRepeatCounter1, newRepeatCounter2 };
-
-      // Act
-      List<RepeatCounter> result = RepeatCounter.GetAll();
-
-      // Assert
-      CollectionAssert.AreEqual(newList, result);
-    }
-
     public void Dispose()
     {
       RepeatCounter.ClearAll();
