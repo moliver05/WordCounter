@@ -15,7 +15,7 @@ Mission is to create a program that checks how frequently a word appears in a gi
 | **Program Give Options to: Add/Check** | Add: "Code" | Check: "Code" |
 | **Program Stores the Data Gathered** | Choose Add or Check: "Add/Check" | Output: "Add Words"|
 | **Program Check the Data of Words to List Out** | Check | "Code"|
-| **Program will be tested to run in Microsoft VisualStudio for Errors** | Result: Passed | Result: Failed | Result: Skipped |
+| **Program will be tested to run in Microsoft VisualStudio for Errors** | Result: Passed | Result: Failed |
 
 
 ## Setup/Installation Requirements
@@ -36,7 +36,7 @@ Mission is to create a program that checks how frequently a word appears in a gi
 ## Support and contact details
 
 _mo.mangahas@gmail.com
-_github/moliver05
+##github/moliver05
 
 ### License
 
