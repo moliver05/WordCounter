@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using WordCounter.Models;
@@ -5,11 +6,75 @@ using WordCounter.Models;
 namespace WordCounter.Tests
 {
   [TestClass]
-  public class WordCounter : IDisposable
+  public class WordCounterTest : IDisposable
   {
+    [TestMethod]
+    public void GetWord_ReturnsWord_String()
+    {
+      //Arrange
+      string meaning = "Mochi";
+      RepeatCounter newRepeatCounter = new RepeatCounter(meaning);
+
+      // Act
+      string result = newRepeatCounter.GetWord();
+
+      //Assert
+      Assert.AreEqual(meaning, result);
+    }
+    [TestMethod]
+    public void SetWord_GetWord_String()
+    {
+      // Arrange
+      string description = "Macbook";
+      RepeatCounter newRepeatCounter = new RepeatCounter(description);
+
+      // Act
+      string secondDescription = "Microsoft";
+      newRepeatCounter.SetWord(secondDescription);
+      string result = newRepeatCounter.GetWord();
+
+      // Assert
+      Assert.AreEqual(secondDescription, result);
+    }
+
+    [TestMethod]
+    public void Save_RepeatCounterisSavedToData_RepeatCounter()
+    {
+      // Arrange
+      string description = "Mochi";
+      RepeatCounter newRepeatCounter = new RepeatCounter(description);
+      newRepeatCounter.Save();
+
+      // Act
+      List<RepeatCounter> data = RepeatCounter.GetData();
+      RepeatCounter savedRepeatCounter = data[0];
+
+      // Assert
+      Assert.AreEqual(newRepeatCounter, savedRepeatCounter)
+
+    }
+    [TestMethod]
+    public void GetData_ReturnsRepeatCounter_RepeatCounterList()
+    {
+      // Arrange
+      string description1 = "Mochi";
+      string  description2 = "Macbook";
+      RepeatCounter newRepeatCounter1 = new RepeatCounter(description1);
+      newRepeatCounter1.Save();
+      RepeatCounter newRepeatCounter2 = new RepeatCounter(description2);
+      newRepeatCounter2.Save();
+      RepeatCounter newRepeatCounter2 = new List<RepeatCounter> { newRepeatCounter1, newRepeatCounter2 };
+
+      // Act
+      List<RepeatCounter> result = RepeatCounter.GetData();
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result)
+    }
+
     public void Dispose()
     {
-
+      RepeatCounter.ClearAll();
     }
   }
 }

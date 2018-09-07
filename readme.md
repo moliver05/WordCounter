@@ -37,7 +37,7 @@ Mission is to create a program that checks how frequently a word appears in a gi
 
 _mo.mangahas@gmail.com
 
-## _www.github.com/moliver05
+_www.github.com/moliver05
 
 ### License
 
