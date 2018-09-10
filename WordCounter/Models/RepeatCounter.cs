@@ -30,23 +30,23 @@ namespace WordCounter.Models
 
     }
 
-    public char[] SplittheInput()
+    public static string[] SplitTheText(string text)
     {
-    char[] splitInput = _input.Split(' ');
-    return splitInput;
+    string[] splitText = text.Split(' ');
+    return splitText;
     }
 
-    public int Count()
+    public static int CountTheWords(string input, string[] splitText)
     {
-      int counts = 0;
-      foreach(string text in SplitSentence())
-     {
-    if (words.Equals(_text))
+      int matches = 0;
+      foreach(string text in splitText)
+    {
+      if (text.Equals(input))
       {
-       counts ++;
+         matches ++;
       }
-       return _text;
-      }
+    }
+      return matches;
     }
   }
 
@@ -56,8 +56,18 @@ namespace WordCounter.Models
     {
       Console.WriteLine("Welcome to WordCounter Program");
       Console.WriteLine("Please type in a word");
-      // string wordInput = Console.ReadLine();
-      // RepeatCounter wordInput = new RepeatCounter();
+      string wordInput = Console.ReadLine();
+      Console.WriteLine("Please type in a text");
+      string textInput = Console.ReadLine();
+      RepeatCounter counterInstance = new RepeatCounter();
+      counterInstance.SetPrivateInput(wordInput);
+      counterInstance.SetPrivateText(textInput);
+      string wordToCount = counterInstance.GetPrivateInput();
+      string[] textToCount = RepeatCounter.SplitTheText(counterInstance.GetPrivateText());
+      int totalCounts = RepeatCounter.CountTheWords(wordToCount, textToCount);
+      Console.WriteLine("Count is :"+ totalCounts);
+
+
 
     }
   }
