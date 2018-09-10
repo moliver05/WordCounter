@@ -6,24 +6,25 @@ using WordCounter.Models;
 namespace WordCounter.Tests
 {
   [TestClass]
-  public class RepeatCounterTest : IDisposable
+  public class RepeatCounterTest
   {
     [TestMethod]
-    public void GetInput_ReturnsInput_String()
+    public void CountTheWords_NumberOfWords()
     {
       //Arrange
       string input = "Mochi";
-      RepeatCounter newRepeatCounter = new RepeatCounter(input);
+      string output = "Mochi is my favorite icecream";
+      int count = 1;
 
       // Act
-      string result = newRepeatCounter.GetInput();
+      int result = RepeatCounter.CountTheWords(input, text);
 
       //Assert
-      Assert.AreEqual(input, result);
+      Assert.AreEqual(count, result);
     }
-    public void Dispose()
-    {
-      RepeatCounter.ClearAll();
-    }
+    // public void Dispose()
+    // {
+    //   RepeatCounter.ClearAll();
+    // }
   }
 }
