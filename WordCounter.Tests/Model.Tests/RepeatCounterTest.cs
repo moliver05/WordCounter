@@ -17,14 +17,10 @@ namespace WordCounter.Tests
       int count = 1;
 
       // Act
-      int result = RepeatCounter.CountTheWords(input, text);
+      int result = RepeatCounter.CountTheWords(input, RepeatCounter.SplitTheText(output));
 
       //Assert
       Assert.AreEqual(count, result);
     }
-    // public void Dispose()
-    // {
-    //   RepeatCounter.ClearAll();
-    // }
   }
 }
